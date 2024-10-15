@@ -1,0 +1,21 @@
+{% extends 'layout.html'  %} {% block content %}
+{% if analysis %}
+    <h1>Text Analysis Result</h1>
+    <p>Total Number of Words: {{ analysis.num_of_words }}</p>
+    <p>Number of Character: {{ analysis.num_of_chars }}</p>
+    <p>The Most Frequent Word: {{ analysis.most_frequent_words }}</p>
+    <p>The word variety(lexical density): {{ analysis.lexical_density | round() * 100}}</p>
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Count</th>
+        </tr>
+        {% for word, count in analysis.all_word_counts %}
+            <tr>
+                <td>{{ word }}</td>
+                <td>{{ count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+{%  endblock %}
