@@ -11,7 +11,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 @app.route('/') # this decorator create the home route
 def home ():
     techs = ['HTML', 'CSS', 'Flask', 'Python']
-    name = '30 Days of Python Programming'
+    name = 'Python Text Analyzer'
     return render_template('home.html', techs = techs, name = name, title = 'Home')
 
 @app.route('/about')
